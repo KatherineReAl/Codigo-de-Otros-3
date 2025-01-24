@@ -8,18 +8,18 @@ const productos = [
   {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
 ]
 
-const li = document.getElementsByName("lista-de-productos")
-const $i = document.querySelector('.input');
+const li = document.getElementsById("lista-de-productos")//Cambie el getElementsByName por getElementsById
+const $i = document.querySelector('input');//Le quite el punto 
 
 for (let i = 0; i < productos.length; i++) {
-  var d = document.createElement("div")
+  const d = document.createElement("div")
   d.classList.add("producto")
 
-  var ti = document.createElement("p")
+  const ti = document.createElement("p")
   ti.classList.add("titulo")
   ti.textContent = productos[i].nombre
   
-  var imagen = document.createElement("img");
+  const imagen = document.createElement("img");
   imagen.setAttribute('src', productos[i].img);
 
   d.appendChild(ti)
@@ -41,14 +41,14 @@ botonDeFiltro.onclick = function() {
   const productosFiltrados = filtrado(productos, texto );
 
   for (let i = 0; i < productosFiltrados.length; i++) {
-    var d = document.createElement("div")
+    const d = document.createElement("div")
     d.classList.add("producto")
   
-    var ti = document.createElement("p")
+    const ti = document.createElement("p")
     ti.classList.add("titulo")
     ti.textContent = productosFiltrados[i].nombre
-    
-    var imagen = document.createElement("img");
+    //cambiar los var por const
+    const imagen = document.createElement("img");
     imagen.setAttribute('src', productosFiltrados[i].img);
   
     d.appendChild(ti)
